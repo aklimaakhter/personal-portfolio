@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" alt="logo">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                    
+                </ul>
+            </nav>
+            <div class="header-text">
+                <h1>Hi I'm <span>Aklima Akhter</span> <br> From Bangladesh</h1>
+                <p>Frontend Developer</p>
+            </div>
+        </div>
+    </div>
+    <!-- ----------about---------- -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/Background1.png" alt="">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About me</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                         Amet, ipsum eligendi. Quo voluptatibus voluptatum magnam 
+                         blanditiis distinctio placeat facilis architecto reprehenderit 
+                         iusto nostrum harum consequuntur, illum earum nihil nisi quibusdam,
+                          debitis animi error commodi dolorum atque deserunt omnis. Tenetur, enim.</p>
+                          <div class="tab-titles">
+                              <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                              <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                              <p class="tab-links"  onclick="opentab('education')">Education</p>
+                          </div>
+                          <div class="tab-contents active-tab" id="skills">
+                              <ul>
+                                  <li><span>Web Design</span><br>Designing Web/App Interfaces</li>
+                                  <li><span>Web Development</span><br>Web App Development</li>
+                              </ul>
+                          </div>
+                          <div class="tab-contents" id="experience">
+                              <ul>
+                                  <li><span>2021</span><br>Web Design course complete from creative IT Institute</li>
+                                  <li><span>2022-Current</span><br>Web Development course complete from Complete Web Development with Jhanker Mahbub</li>
+                              </ul>
+                          </div>
+                          <div class="tab-contents" id="education">
+                              <ul>
+                                  <li><span>2010</span><br>MBS from Govt. Gurudayal College</li>
+                                  <li><span>2008</span><br>BBS from Govt. Gurudayal College</li>
+                              </ul>
+                          </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        var tabLinks = document.getElementsByClassName('tab-links');
+        var tabContents = document.getElementsByClassName('tab-contents');
+
+        function opentab(tabName){
+            for(tabLink of tabLinks){
+                tabLink.classList.remove("active-link");
+            }
+            for(tabContent of tabContents){
+                tabContent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabName).classList.add("active-tab")
+        }
+    </script>
+</body>
+</html>
